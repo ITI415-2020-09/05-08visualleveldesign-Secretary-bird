@@ -16,9 +16,12 @@ public class ForrestSounds : MonoBehaviour
         {
             source.Play();
         }
-        else
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
-            source.Pause();
+            source.Stop();
         }
     }
 }
